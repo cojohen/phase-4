@@ -6,31 +6,32 @@ export default function Home() {
     <main className="min-h-screen bg-black">
       {/* Hero Section */}
       <section className="w-full min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
-        <div className="w-full max-w-7xl mx-auto flex flex-col items-center justify-center text-center">
-          {/* Logo Container with Overlay Text */}
-          <div className="relative w-full max-w-[200px] sm:max-w-[300px] md:max-w-[400px] lg:max-w-[500px] xl:max-w-[600px] aspect-square mb-6 sm:mb-8 lg:mb-12">
-            <Image
-              src="/logo.png"
-              alt="Phase 4 Logo"
-              fill
-              className="object-contain"
-              priority
-            />
-            {/* Phase Text Overlay */}
-            <h1 className="absolute mt-8 top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 font-tt-hoves text-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-9xl font-bold tracking-tight leading-tight whitespace-nowrap">
-              phase
-            </h1>
+        <div className="w-full max-w-7xl mx-auto">
+          <div className="flex flex-row items-center justify-center gap-6 sm:gap-8 md:gap-12 lg:gap-16">
+            {/* Logo */}
+            <div className="relative w-[120px] h-[120px] sm:w-[180px] sm:h-[180px] md:w-[240px] md:h-[240px] lg:w-[300px] lg:h-[300px] xl:w-[400px] xl:h-[400px] flex-shrink-0">
+              <Image
+                src="/logo.png"
+                alt="Phase 4 Logo"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
 
-            {/* Subtext */}
-            <p className="text-black absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-lg sm:text-xl md:text-2xl lg:text-2xl font-bold w-full uppercase ml-4">
-              builder accelerator
-            </p>
-
-            {/* Sub-subtext */}
-            <div className="text-black  absolute bottom-[50px] right-[140px]    -translate-y-1/2 text-sm sm:text-base md:text-lg lg:text-2xl font-bold text-leading-8 space-y-1 flex gap-0 flex-col">
-              <div className="m-0 p-0">learn.</div>
-              <div className="m-0 p-0">build.</div>
-              <div className="m-0 p-0">launch.</div>
+            {/* Text Content - Right side */}
+            <div className="flex flex-col items-start justify-center text-left space-y-2 sm:space-y-3 md:space-y-4">
+              <h1 className="font-tt-hoves text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-bold tracking-tight leading-tight">
+                phase
+              </h1>
+              <p className="text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold uppercase">
+                builder accelerator
+              </p>
+              <div className="text-white text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-bold leading-tight space-y-1">
+                <div>learn.</div>
+                <div>build.</div>
+                <div>launch.</div>
+              </div>
             </div>
           </div>
         </div>
