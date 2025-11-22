@@ -7,7 +7,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="w-full min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
         <div className="w-full max-w-7xl mx-auto">
-          <div className="flex flex-row items-center justify-center gap-6 sm:gap-8 md:gap-12 lg:gap-16">
+          <div className="flex flex-row items-center justify-center gap-0">
             {/* Logo */}
             <div className="relative w-[120px] h-[120px] sm:w-[180px] sm:h-[180px] md:w-[240px] md:h-[240px] lg:w-[300px] lg:h-[300px] xl:w-[400px] xl:h-[400px] flex-shrink-0">
               <Image
