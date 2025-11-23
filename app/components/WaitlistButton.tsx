@@ -1,11 +1,69 @@
 "use client";
 
 import { useState } from "react";
+import confetti from "canvas-confetti";
 
 export default function WaitlistButton() {
     const [isOpen, setIsOpen] = useState(false);
     const [email, setEmail] = useState("");
     const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+
+    const triggerConfetti = () => {
+        const count = 200;
+        const defaults = {
+            origin: { y: 0.7 },
+            zIndex: 9999,
+        };
+
+        function fire(particleRatio: number, opts: confetti.Options) {
+            confetti({
+                ...defaults,
+                ...opts,
+                particleCount: Math.floor(count * particleRatio),
+            });
+        }
+
+        fire(0.25, {
+            spread: 26,
+            startVelocity: 55,
+            colors: ["#5865F2", "#4752C4", "#7289DA", "#FFFFFF", "#23272A"],
+        });
+
+        fire(0.2, {
+            spread: 60,
+            origin: { x: 0.2, y: 0.7 },
+            startVelocity: 45,
+            colors: ["#5865F2", "#4752C4", "#7289DA", "#FFFFFF"],
+        });
+
+        fire(0.2, {
+            spread: 60,
+            origin: { x: 0.8, y: 0.7 },
+            startVelocity: 45,
+            colors: ["#5865F2", "#4752C4", "#7289DA", "#FFFFFF"],
+        });
+
+        fire(0.15, {
+            spread: 100,
+            decay: 0.91,
+            scalar: 0.8,
+            colors: ["#5865F2", "#4752C4", "#7289DA"],
+        });
+
+        fire(0.1, {
+            spread: 120,
+            startVelocity: 25,
+            decay: 0.92,
+            scalar: 1.2,
+            colors: ["#5865F2", "#4752C4", "#7289DA", "#FFFFFF"],
+        });
+
+        fire(0.1, {
+            spread: 120,
+            startVelocity: 45,
+            colors: ["#5865F2", "#4752C4", "#7289DA"],
+        });
+    };
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -25,11 +83,16 @@ export default function WaitlistButton() {
             if (response.ok) {
                 setStatus("success");
                 setEmail("");
-                // Close modal after 2 seconds on success
+
+                // Trigger confetti immediately on success
+                triggerConfetti();
+
+                // Wait 1 second before navigating and closing
                 setTimeout(() => {
+                    window.open("https://discord.gg/b2cqNemxD4", "_blank", "noopener,noreferrer");
                     setIsOpen(false);
                     setStatus("idle");
-                }, 2000);
+                }, 1000);
             } else {
                 setStatus("error");
             }
@@ -74,7 +137,7 @@ export default function WaitlistButton() {
                         {status === "success" ? (
                             <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-4 text-center">
                                 <p className="text-green-400 font-bold">You're on the list! 🚀</p>
-                                <p className="text-white/60 text-sm mt-1">Keep an eye on your inbox.</p>
+                                <p className="text-white/60 text-sm mt-1">Opening Discord...</p>
                             </div>
                         ) : (
                             <form onSubmit={handleSubmit} className="space-y-4">
