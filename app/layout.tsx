@@ -9,29 +9,45 @@ const ttHoves = localFont({
   display: "swap",
 });
 
+const baseUrl =
+  process.env.NEXT_PUBLIC_BASE_URL ||
+  (process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : "http://localhost:3000");
+
+// Production domain - use this for absolute URLs in metadata
+const productionUrl = "https://www.phase4.dev";
+
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_BASE_URL ||
-    (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000')
-  ),
+  metadataBase: new URL(productionUrl),
   title: {
     default: "Phase 4 | The AI-Native Developer Accelerator",
-    template: "%s | Phase 4"
+    template: "%s | Phase 4",
   },
-  description: "Stop waiting for permission. Phase 4 gives jetpacks to junior engineers to build, scale, and launch AI-powered applications. Join the revolution.",
-  keywords: ["AI Accelerator", "Junior Developer", "Startup Incubator", "Next.js", "React", "Software Engineering", "Career Growth"],
+  description:
+    "Stop waiting for permission. Phase 4 gives jetpacks to junior engineers to build, scale, and launch AI-powered applications. Join the revolution.",
+  keywords: [
+    "AI Accelerator",
+    "Junior Developer",
+    "Startup Incubator",
+    "Next.js",
+    "React",
+    "Software Engineering",
+    "Career Growth",
+  ],
   authors: [{ name: "Phase 4" }],
   creator: "Phase 4",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://phase4.app",
+    url: productionUrl,
     title: "Phase 4 | The AI-Native Developer Accelerator",
-    description: "Stop waiting for permission. Phase 4 gives jetpacks to junior engineers to build, scale, and launch AI-powered applications.",
+    description:
+      "Stop waiting for permission. Phase 4 gives jetpacks to junior engineers to build, scale, and launch AI-powered applications.",
     siteName: "Phase 4",
     images: [
       {
-        url: "/og-preview.png",
+        url: `${productionUrl}/og-preview.png`,
         width: 1200,
         height: 630,
         alt: "Phase 4 - Stop Waiting for Permission. Start Shipping Software.",
@@ -42,7 +58,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Phase 4 | The AI-Native Developer Accelerator",
     description: "Stop waiting for permission. Start shipping software.",
-    images: ["/og-preview.png"],
+    images: [`${productionUrl}/og-preview.png`],
     creator: "@phase4_app", // Placeholder
   },
   icons: {
@@ -56,9 +72,9 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
 };
