@@ -39,7 +39,7 @@ export default function Home() {
             <div className="relative w-[200px] sm:w-[240px] lg:w-[250px] h-[415px]">
               <Image
                 src="/phase-logo-large.png"
-                alt="Phase 4"
+                alt="Phase4"
                 fill
                 className="object-contain"
                 priority
@@ -123,7 +123,7 @@ export default function Home() {
               it, or you can wield it.
             </p>
             <p className="font-tt-hoves text-4xl sm:text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#5865F2] to-[#99AAB5] uppercase tracking-wider">
-              Phase 4 is the weapon.
+              Phase4 is the weapon.
             </p>
           </div>
         </div>
@@ -138,7 +138,7 @@ export default function Home() {
               <span className="text-[#5865F2]">Hyperdeveloper</span> Accelerator
             </h2>
             <p className="text-lg sm:text-xl md:text-2xl text-white/70 max-w-4xl mx-auto">
-              Phase 4 is not a bootcamp. It is a decentralized accelerator for
+              Phase4 is not a bootcamp. It is a decentralized accelerator for
               rapid applications development. We teach junior engineers how to
               use AI as a design partner to develop and launch complete
               applications in days, not months.
@@ -212,12 +212,12 @@ export default function Home() {
               <span className="text-[#5865F2]">We Network.</span>
             </h2>
             <p className="text-lg sm:text-xl text-white/80 leading-relaxed mb-8">
-              Phase 4 utilizes a "Social Lift" strategy. When you ship, we
+              Phase4 utilizes a "Social Lift" strategy. When you ship, we
               support. When you post on LinkedIn, we engage. When you launch we
               upvote, comment, retweet and signup.
             </p>
             <p className="text-lg sm:text-xl text-white/80 leading-relaxed">
-              By joining Phase 4, you are instantly plugging into a network of
+              By joining Phase4, you are instantly plugging into a network of
               builders who are actively boosting each other's visibility in the
               algorithm.{" "}
               <span className="text-white font-bold">
@@ -330,7 +330,7 @@ export default function Home() {
                 <li className="flex items-start">
                   <span className="text-green-400 mr-3">✓</span>
                   <span className="text-white/80">
-                    Phase 4's starter kit GitHub repository
+                    Phase4's starter kit GitHub repository
                   </span>
                 </li>
               </ul>
@@ -362,8 +362,8 @@ export default function Home() {
       {/* Footer */}
       <footer className="relative z-10 w-full py-8 border-t border-white/10 text-center text-white/40 text-sm">
         <p>
-          © 2025 Phase 4. All rights reserved. Safety not guaranteed. Always
-          wear a helmet when flying a jetpack.
+          © 2025 Phase4. All rights reserved. Safety not guaranteed. Always wear
+          a helmet when flying a jetpack.
         </p>
       </footer>
     </main>
