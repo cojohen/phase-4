@@ -10,7 +10,10 @@ const ttHoves = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://phase4.app'), // TODO: Update with your actual domain
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_BASE_URL ||
+    (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000')
+  ),
   title: {
     default: "Phase 4 | The AI-Native Developer Accelerator",
     template: "%s | Phase 4"
