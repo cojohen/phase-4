@@ -65,7 +65,7 @@ export default function Home() {
           </h2>
 
           <p className="text-xl sm:text-2xl md:text-3xl text-white/70 max-w-3xl mx-auto mb-12 leading-relaxed">
-            The job market is broken. The old path is dead.<br />We are providing <span className="text-white font-bold">jetpacks</span> to 1,000 junior engineers—a program in rapidly building & launching AI applications.
+            The job market is broken. The old path is dead.<br />We are providing <span className="text-white font-bold">jetpacks</span> to 1,000 junior engineers—teaching rapid building & launching of AI applications.
           </p>
 
           <div className="flex flex-col items-center space-y-6">
